@@ -1,295 +1,253 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Профессиональный монтаж и обслуживание систем">
-  <title>РСПро - Монтаж оборудования пищевой промышленности</title>
-  <link rel="apple-touch-icon" sizes="160x160" href="files/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="files/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="files/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="files/favicon_io/site.webmanifest">
-
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style/mycss.css">
+    <meta charset="UTF-8">
+    <title>Калькулятор монтажа</title>
+    <style>
+        .calculator {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #eee;
+        }
+        
+        .price-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        #resetBtn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 25px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #total {
+            font-size: 24px;
+            color: #2196f3;
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 2px solid #eee;
+            text-align: right;
+        }
+        .email-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        
+        #saveBtn {
+            background: #4CAF50;
+            margin: 10px 0;
+        }
+        
+        #orderNumber {
+            color: #2e7d32;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
 <body>
-  <!-- 3D pict -->
-
-
-  
-  <!-- Заголовок и главные ссылки на сайт -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top py-2">
-      <div class="container-fluid gx-1">
-        <!-- Logo -->
-        <a class="navbar-brand p-0 me-3" href="index.html">
-          <img src="img/Logo new.png" alt="РСПро" class="img-fluid" style="max-width: 250px;">
-        </a>
-
-        <!-- Mobile Toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navigation Items -->
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav align-items-center gap-2 gap-lg-3">
-            <li class="nav-item">
-              <a class="nav-link fs-5 py-0" href="montage.html">Монтаж</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 py-0" href="to.html">Техобслуживание</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 py-0" href="remont.html">Ремонт</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle fs-5 py-0" href="ours.html" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Наши работы
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Боско Кафе</a></li>
-                <li><a class="dropdown-item" href="#">TGI FRIDAYS</a></li>
-                <li><a class="dropdown-item" href="#">Ириал в ФГУП ТТЦ Останкино</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 py-0" href="contact.html">Контакты</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 py-0" href=""> </a>
-            </li>
-          </ul>
-          <div class="tel">
-            <a class="ds-button ds-button_color_primary-inverse ds-button_size_m" href="tel: +7 (495) 106-0-109"
-              data-v-e64058ac="" data-v-21aa22b9="">
-              <!----><span class="ds-button__text" data-v-21aa22b9="">
-                <small
-                  style="display: inline; margin: 0px; padding: 0px; font-size: 25px; color: inherit; line-height: inherit;"><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.9375;">+</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.875;">7</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit;">
-                  </small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.8125;">(</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.75;">4</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.6875;">9</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.625;">5</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.5625;">)</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit;">
-                  </small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.5;">1</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.4375;">0</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.375;">6</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.3125;">-</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.25;">0</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.1875;">-</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.125;">1</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.0625;">0</small><small
-                    style="display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0;">9</small></small>
-          </div>
-          <div class="mail">
-            <a class="ds-button ds-button_color_primary ds-button_size_m" href="mailto: mpro@rspro.ru"
-              data-v-e64058ac="" data-v-21aa22b9=""><button type="button" class="btn1 btn-primary btn-lg"><span
-                  class="ds-button__text" data-v-21aa22b9="">mpro@rspro.ru</span></button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-
-
-  </header>
-
-  <!-- Основная страница -->
-  <section>
-    <!-- Разбиваю страницу на два столбика -->
-    <table>
-      <tr>
-        <!-- Первый он же левый столбик - основной -->
-        <td>
-          <div>
-            <!-- Контейнер -->
-            <div class="mainclass">
-              <main class="container my-5">
-                <section class="py-5">
-                  <h1 class="text-center mb-4">RSPro — Ваш надежный партнер в монтаже оборудования для HORECA</h1>
-                </section>
-              </main>
+    <div class="calculator">
+        <h2>Калькулятор стоимости монтажа</h2>
+        
+        <div class="items">
+            <div class="item">
+                <span>Монтаж промышленной плиты</span>
+                <div class="price-info">
+                    <span>от 15 000 ₽/шт</span>
+                    <input type="number" data-price="15000" min="0" value="0">
+                </div>
             </div>
-            <!-- Контейнер -->
-            <div class="mainclass">
-              <main class="container my-5">
-                <section class="py-5">
-                  <h3 class="text-center mb-4"> Добро пожаловать в RSPro — компанию, которая превращает ваши идеи в
-                    работающие
-                    решения! Мы специализируемся на
-                    профессиональном монтаже оборудования для предприятий пищевой промышленности, ресторанов, кафе,
-                    столовых, баров
-                    и
-                    других
-                    объектов сферы общественного питания. Наша миссия — помочь вашему бизнесу стать эффективнее,
-                    безопаснее и
-                    прибыльнее.
-                  </h3>
-                </section>
-              </main>
+            
+            <div class="item">
+                <span>Установка холодильной камеры</span>
+                <div class="price-info">
+                    <span>от 25 000 ₽/шт</span>
+                    <input type="number" data-price="25000" min="0" value="0">
+                </div>
             </div>
-            <!-- Контейнер -->
-            <div class="opisanie">
-              <h2 class="text-center mb-4"> Почему выбирают RSPro?</h2>
-              <table class="one" style="font-size: x-large;">
-                <tr>
-                  <td>
-                    ✅ Опыт и экспертиза: Более 10 лет мы работаем с объектами HORECA, знаем все тонкости монтажа
-                    холодильных
-                    установок, пекарского оборудования, линий раздачи, посудомоечных систем и другого спецоборудования.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    ✅ Соблюдение стандартов: Все работы выполняются в строгом соответствии с СанПиН, ГОСТ и требованиями
-                    пожарной
-                    безопасности.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    ✅ Под ключ: От <s>проектирования и</s> поставки техники до пусконаладки и обучения персонала — берем
-                    на себя все
-                    этапы.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    ✅ Сроки — в приоритете: Мы ценим ваше время. Гарантируем монтаж без задержек, чтобы вы могли начать
-                    работу в
-                    запланированные даты.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    ✅ Поддержка 24/7: Сервисное обслуживание, экстренный ремонт, консультации — мы всегда на связи.
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <!-- Несколько отступов -->
-            <br><br><br><br><br>
-            <!-- Контейнер -->
-            <div>
-              <h2 class="text-center mb-4"> Для кого мы работаем?</h2>
-              <ul class="spisok" style="font-size: x-large;">Наши клиенты — это:
-                <li style="list-style-type: none;"><br></li>
-                <li class="sp"><b>Рестораны и кафе</b> (от кофейни до премиум-заведений);
-                </li>
-                <li class="sp"><b>Столовые и пищеблоки</b> (корпоративные, учебные, медицинские учреждения);
-                </li>
-                <li class="sp"><b>Бары и пивоварни</b>;
-                </li>
-                <li class="sp"><b>Пищевые производства</b> (цеха, мини-фабрики, пекарни);
-                </li>
-                <li class="sp"><b>Сети HoReCa</b> (федеральные и региональные).
-                </li>
-              </ul>
-            </div>
-            <hr>
-            <!-- Контейнер -->
-            <div>
-              <h2 class="text-center mb-4"> Наши услуги:</h2>
-              <ul class="spisok" style="font-size: x-large;">
-                <!-- Наши услуги:
-              <li style="list-style-type: none;"><br></li> -->
-                <li class="sp">Монтаж и интеграция технологического оборудования;
-                </li>
-                <li class="sp">Пуско-наладка и тестирование систем;
-                </li>
-                <li class="sp"><s>Проектирование рабочих зон под требования заказчика;</s>
-                </li>
-                <li class="sp">Гарантийное и постгарантийное обслуживание;
-                </li>
-                <li class="sp">Аудит и модернизация существующих производственных линий.
-                </li>
-              </ul>
-            </div>
-            <hr>
-            <!-- Контейнер -->
-            <div>
-              <h2 class="text-center mb-4"> RSPro — это выгода:</h2>
-              <ul class="spisok" style="font-size: x-large;">
-                <li class="sp"><b>Экономия ресурсов: Правильный монтаж снижает риски поломок и простоев.</b>
-                </li>
-                <li class="sp"><b>Индивидуальный подход: Учитываем специфику вашего помещения и бюджета.</b>
-                </li>
-                <li class="sp"><b>Прозрачность: Фиксированная стоимость в договоре, без скрытых платежей.</b>
-                </li>
-              </ul>
-            </div>
-            <hr>
-            <!-- Контейнер -->
-            <div class="down">
-              <h3>Начните сотрудничество сегодня!</h3>
-              <div style="font-size: larger;">
-                <br>
-                <p>Оставьте заявку на сайте — и наш инженер бесплатно проконсультирует вас, подготовит расчет и
-                  предложит
-                  оптимальное решение.</p>
-                <p><strong>RSPro:</strong> Основа вашего успеха — в надежном оборудовании!</p>
-                <p><i>Создаем инфраструктуру для вкусного бизнеса.</i></p>
-              </div>
-            </div>
-            <hr>
-            <!-- Котейнер с контактами -->
-            <div class="cont" style="font-size: larger;">
-              <ul style="list-style-type: none; text-decoration: none;">
-                <li>📞Звоните:<a class="teldw" href="tel: +7 (495) 106-0-109">&nbsp;&nbsp;&nbsp; +7 (495) 106-0-109</a>
-                </li>
-                <li>✉️Пишите:<a class="maildw" href="mailto: mpro@rspro.ru">&nbsp;&nbsp; mpro@rspro.ru</a></li>
-                <li>📍 Адрес: <a class="map" href="https://2gis.ru/moscow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Работаем
-                    по всей
-                    Москве</a>
-              </ul>
-            </div>
-            <hr>
-            <h3 class="mmm"><em>RSPro — профессионалы, которым доверяют HORECA.</em></h3>
-          </div>
-        </td>
-        <!-- Второй он же правый, для рекламы и других ссылок -->
-        <!-- <td style="vertical-align: top;">
-          <h5 style="top: auto;"">Наш старый сайт</h5>
-          <section class="bok">
-            <iframe name="Старый сайт" src="https://r-s-pro.ru" height="500" width="200" referrerpolicy="origin"></iframe>
-          </section>
+            
+            <div class="item">
+                <span>Подключение пароконвектомата</span>
+                <div class="price-info">
+                    <span>от 25 000 ₽/шт</span>
+                    <input type="number" data-price="25000" min="0" value="0">
+                </div>
+            </div>            
+            
+            <div class="item">
+                <span>Подключение пароконвектомата</span>
+                <div class="price-info">
+                    <span>25 000 ₽/шт</span>
+                    <input type="number" data-price="25000" min="0" value="0">
+                </div>
+            </div>    
 
-        </td> -->
-      </tr>
-    </table>
-  </section>
+            <div class="item">
+                <span>Подключение пароконвектомата</span>
+                <div class="price-info">
+                    <span>25 000 ₽/шт</span>
+                    <input type="number" data-price="25000" min="0" value="0">
+                </div>
+            </div>    
 
-  <!-- Подвал сайта -->
-  <footer class="bg-dark text-light py-4">
-    <div class="container text-center">
-      <p>&copy; 2016 РСПро. Все права защищены.</p>
-    </div>
-  </footer>
+            <div class="item">
+                <span>Подключение пароконвектомата</span>
+                <div class="price-info">
+                    <span>25 000 ₽/шт</span>
+                    <input type="number" data-price="25000" min="0" value="0">
+                </div>
+            </div>    
+
+
+            <!-- Добавьте остальные позиции по аналогии -->
+
+<!-- Дальше идет склейка из другого файла -->
+<div id="total">Итого: 0 ₽</div>
+<button id="resetBtn">Обнулить</button>
+
+<div class="email-section">
+    <input type="email" id="clientEmail" placeholder="Ваш email для сохранения результата">
+    <input type="hidden" id="serviceEmail" value="mpro@rspro.ru">
+    <button id="saveBtn">Сохранить результат</button>
+    <div id="orderNumber"></div>
+</div>
+</div>
+<!-- Конец первой склейки -->
+
+    
+    <script>
+        const inputs = document.querySelectorAll('input[type="number"]');
+        const totalElement = document.getElementById('total');
+        const resetBtn = document.getElementById('resetBtn');
+        let total = 0;
+
+        // Функция обновления общей суммы
+        function updateTotal() {
+            total = 0;
+            inputs.forEach(input => {
+                const price = parseInt(input.dataset.price);
+                const quantity = parseInt(input.value) || 0;
+                total += price * quantity;
+            });
+            totalElement.textContent = `Итого: ${total.toLocaleString('ru-RU')} ₽`;
+        }
+
+        // Слушаем изменения во всех полях ввода
+        inputs.forEach(input => {
+            input.addEventListener('input', updateTotal);
+        });
+
+        // Обработчик кнопки сброса
+        resetBtn.addEventListener('click', () => {
+            inputs.forEach(input => input.value = 0);
+            updateTotal();
+        });
 
 
 
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    </script>
+
+<script>
+    // Предыдущий код расчета
+    let currentOrderNumber = null;
+
+    function generateOrderNumber() {
+        const timestamp = Date.now().toString(36);
+        const random = Math.floor(Math.random() * 1000).toString(36);
+        return `RSPRO-${timestamp}-${random}`.toUpperCase();
+    }
+
+    async function sendEmail(orderData) {
+        // Здесь должна быть реализация отправки через EmailJS, SMTP.js или бэкенд
+        console.log('Отправка данных:', orderData);
+        
+        // Пример для тестирования:
+        const mailtoLink = `mailto:${orderData.serviceEmail}?cc=${orderData.clientEmail}&subject=Заказ ${orderData.number}&body=${encodeURIComponent(orderData.text)}`;
+        window.location.href = mailtoLink;
+    }
+
+    document.getElementById('saveBtn').addEventListener('click', async () => {
+        const clientEmail = document.getElementById('clientEmail').value;
+        const serviceEmail = document.getElementById('serviceEmail').value;
+        
+        if(!clientEmail.match(/\S+@\S+\.\S+/)) {
+            alert('Введите корректный email');
+            return;
+        }
+
+        const orderItems = [];
+        document.querySelectorAll('.item').forEach(item => {
+            const name = item.querySelector('span').textContent;
+            const input = item.querySelector('input');
+            if(input.value > 0) {
+                orderItems.push({
+                    name: name,
+                    quantity: input.value,
+                    price: input.dataset.price
+                });
+            }
+        });
+
+        currentOrderNumber = generateOrderNumber();
+        
+        const orderData = {
+            number: currentOrderNumber,
+            clientEmail: clientEmail,
+            serviceEmail: serviceEmail,
+            total: total,
+            items: orderItems,
+            text: `Заказ №: ${currentOrderNumber}\nИтого: ${total} ₽\n\nДетали:\n${
+                orderItems.map(item => 
+                    `${item.name} - ${item.quantity} шт. x ${item.price} ₽`
+                ).join('\n')
+            }`
+        };
+
+        try {
+            await sendEmail(orderData);
+            document.getElementById('orderNumber').textContent = `Номер вашего заказа: ${currentOrderNumber}`;
+            localStorage.setItem('lastOrder', JSON.stringify(orderData));
+            alert('Результат сохранен и отправлен!');
+        } catch (error) {
+            alert('Ошибка отправки: ' + error.message);
+        }
+    });
+</script>
+
+
 </body>
-
 </html>
