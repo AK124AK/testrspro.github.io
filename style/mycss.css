@@ -83,7 +83,13 @@ body {
     background-clip: text;
     color: transparent;
   }
-  
+
+.img1 {
+  style="height: 100%;"
+  width="400px"
+  margin: 0;
+}
+
 .buttonto {
   display: flex;
   flex-direction: column;
@@ -123,3 +129,4 @@ body {
 .cont {
   
 }
+
