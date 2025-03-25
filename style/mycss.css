@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap);
 
-body {
-  /* background: linear-gradient(270deg, #f88989 0%, #f8b6b6 43%, #aea5fa 100%); */
-}
+/* body {
+  background: linear-gradient(270deg, #f88989 0%, #f8b6b6 43%, #aea5fa 100%);
+} */
 
 .navbar-nav .nav-link {
     white-space: nowrap;
@@ -46,10 +46,13 @@ body {
     background-clip: text;
     color: transparent;
   }
+  
 
-  .sp {
-    margin-left: 50px;
-  }
+/* Адаптивные отступы */
+.sp {
+  margin-left: 1rem;
+}
+
   .down {
     padding: 25px;
   }
@@ -85,9 +88,15 @@ body {
   }
 
 .img1 {
-  style="height: 100%;"
-  width="400px"
+  height: 100%;;
+  width: 400px;
   margin: 0;
+}
+
+/* Адаптивное изображение */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
 .buttonto {
@@ -126,7 +135,42 @@ body {
   padding: 10px;
 }
 
-.cont {
+/* Добавим медиа-запросы для мобильных */
+@media (max-width: 768px) {
+  .spisok {
+    margin-left: 0;
+    padding: 0 15px;
+    font-size: 18px !important;
+  }
   
+  .mmm {
+    margin-left: 0 !important;
+    text-align: center;
+    padding: 20px !important;
+    font-size: 24px !important;
+  }
+  
+  .navbar-brand img {
+    max-width: 180px !important;
+  }
+  
+  .down {
+    padding: 15px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+  
+  .tel, .mail {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .mobile-logo {
+    max-width: 180px !important;
+  }
 }
 
